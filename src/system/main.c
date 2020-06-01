@@ -25,6 +25,7 @@
  */
 
 #include "main.h"
+#include "cmdSTT.h"
 
 const char *tag = "main";
 
@@ -45,6 +46,7 @@ int main(void)
     log_init(LOG_LEVEL, -1);      // Logging system
     cmd_repo_init(); // Command repository initialization
     dat_repo_init(); // Update status repository
+    cmd_stt_init();
 
     /* Initializing shared Queues */
     dispatcher_queue = osQueueCreate(25,sizeof(cmd_t *));
